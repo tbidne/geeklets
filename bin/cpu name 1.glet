@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Command</key>
-	<string>~/GitHub/geeklets/system/ram.rb</string>
+	<string>SYSTEM=`top -l2 | grep "CPU usage"| head -1 | awk '{print "X"int(($3+$5)/2)"X"}' | sed 's/\%//'`
+
+echo $SYSTEM | sed "s/X0X/a/;s/X1X/b/;s/X2X/c/;s/X3X/d/;s/X4X/e/;s/X5X/f/;s/X6X/g/;s/X7X/h/;s/X8X/i/;s/X9X/j/;s/X10X/k/;s/X11X/l/;s/X12X/m/;s/X13X/n/;s/X14X/o/;s/X15X/p/;s/X16X/q/;s/X17X/r/;s/X18X/s/;s/X19X/t/;s/X20X/u/;s/X21X/v/;s/X22X/w/;s/X23X/x/;s/X24X/y/;s/X25X/z/;s/X26X/A/;s/X27X/B/;s/X28X/C/;s/X29X/D/;s/X30X/E/;s/X31X/F/;s/X32X/G/;s/X33X/H/;s/X34X/I/;s/X35X/J/;s/X36X/K/;s/X37X/L/;s/X38X/M/;s/X39X/N/;s/X40X/O/;s/X41X/P/;s/X42X/Q/;s/X43X/R/;s/X44X/S/;s/X45X/T/;s/X46X/U/;s/X47X/V/;s/X48X/W/;s/X49X/X/;s/X50X/Y/"</string>
+	<key>DisplayID</key>
+	<integer>69732352</integer>
 	<key>DropShadow</key>
 	<false/>
 	<key>FailureImage</key>
@@ -36,17 +40,17 @@
 	<key>FontFamily</key>
 	<string>font3933</string>
 	<key>FontSize</key>
-	<real>96</real>
+	<real>100</real>
 	<key>GeekletFrame</key>
-	<string>{{8, 142}, {104, 92}}</string>
+	<string>{{117.671875, 142.52734375}, {105, 93}}</string>
 	<key>HasShadow</key>
 	<false/>
 	<key>Identifier</key>
 	<string>org.tynsoe.geeklet.shell</string>
 	<key>Name</key>
-	<string>ARC mem active</string>
+	<string>cpu meter1</string>
 	<key>RefreshInterval</key>
-	<integer>1</integer>
+	<integer>5</integer>
 	<key>SetLocale</key>
 	<true/>
 	<key>SuccessImage</key>

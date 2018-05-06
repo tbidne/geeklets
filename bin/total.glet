@@ -3,9 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Command</key>
-	<string>/Users/Tommy/GitHub/geeklets/network/network.rb ssid</string>
-	<key>DisplayStatusImage</key>
-	<false/>
+	<string>~/GitHub/geeklets/lib/driver/network_driver.rb total</string>
 	<key>DropShadow</key>
 	<false/>
 	<key>FailureImage</key>
@@ -102,13 +100,13 @@
 	<key>FontSize</key>
 	<real>18</real>
 	<key>GeekletFrame</key>
-	<string>{{18, 310}, {216, 45}}</string>
+	<string>{{20, 495}, {190, 48}}</string>
 	<key>HasShadow</key>
 	<false/>
 	<key>Identifier</key>
 	<string>org.tynsoe.geeklet.shell</string>
 	<key>Name</key>
-	<string>ssid</string>
+	<string>total</string>
 	<key>RefreshInterval</key>
 	<integer>300</integer>
 	<key>SetLocale</key>

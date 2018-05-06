@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Command</key>
-	<string>/Users/Tommy/GitHub/geeklets/network/network.rb ip</string>
+	<string>SYSTEM=`top -l2 | grep "CPU usage"| tail -1 | awk '{print "X"int(($3+$5)/2)"X"}' | sed 's/\%//'`
+
+echo $SYSTEM | sed "s/X0X/a/;s/X1X/b/;s/X2X/c/;s/X3X/d/;s/X4X/e/;s/X5X/f/;s/X6X/g/;s/X7X/h/;s/X8X/i/;s/X9X/j/;s/X10X/k/;s/X11X/l/;s/X12X/m/;s/X13X/n/;s/X14X/o/;s/X15X/p/;s/X16X/q/;s/X17X/r/;s/X18X/s/;s/X19X/t/;s/X20X/u/;s/X21X/v/;s/X22X/w/;s/X23X/x/;s/X24X/y/;s/X25X/z/;s/X26X/A/;s/X27X/B/;s/X28X/C/;s/X29X/D/;s/X30X/E/;s/X31X/F/;s/X32X/G/;s/X33X/H/;s/X34X/I/;s/X35X/J/;s/X36X/K/;s/X37X/L/;s/X38X/M/;s/X39X/N/;s/X40X/O/;s/X41X/P/;s/X42X/Q/;s/X43X/R/;s/X44X/S/;s/X45X/T/;s/X46X/U/;s/X47X/V/;s/X48X/W/;s/X49X/X/;s/X50X/Y/"</string>
+	<key>DisplayID</key>
+	<integer>69732352</integer>
 	<key>DropShadow</key>
 	<false/>
 	<key>FailureImage</key>
@@ -96,19 +100,19 @@
 	ivgZ+Kj5OPnH+lf65/t3/Af8mP0p/br+S/7c/23//w==
 	</data>
 	<key>FontFamily</key>
-	<string>HelveticaNeue-Thin</string>
+	<string>font3933</string>
 	<key>FontSize</key>
-	<real>18</real>
+	<real>100</real>
 	<key>GeekletFrame</key>
-	<string>{{18, 356}, {231, 45}}</string>
+	<string>{{231.45703125, 144.2578125}, {103, 92}}</string>
 	<key>HasShadow</key>
 	<false/>
 	<key>Identifier</key>
 	<string>org.tynsoe.geeklet.shell</string>
 	<key>Name</key>
-	<string>ip</string>
+	<string>cpu meter 2</string>
 	<key>RefreshInterval</key>
-	<integer>300</integer>
+	<integer>5</integer>
 	<key>SetLocale</key>
 	<true/>
 	<key>SuccessImage</key>
@@ -200,12 +204,10 @@
 	6dDqW+rl63Dr++yG7RHtnO4o7rTvQO/M8Fjw5fFy8f/yjPMZ86f0NPTC9VD13vZt9vv3
 	ivgZ+Kj5OPnH+lf65/t3/Af8mP0p/br+S/7c/23//w==
 	</data>
-	<key>TextAlignment</key>
-	<integer>0</integer>
 	<key>TextColor</key>
 	<data>
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
-	ZmZmAQEBAYY=
+	ZmZmAQEBgwAAAD+G
 	</data>
 	<key>TextStrikethrough</key>
 	<integer>0</integer>

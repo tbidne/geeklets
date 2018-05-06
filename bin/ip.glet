@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Command</key>
-	<string>echo "CPU1"</string>
+	<string>~/GitHub/geeklets/lib/driver/network_driver.rb ip</string>
 	<key>DropShadow</key>
 	<false/>
 	<key>FailureImage</key>
@@ -96,19 +96,19 @@
 	ivgZ+Kj5OPnH+lf65/t3/Af8mP0p/br+S/7c/23//w==
 	</data>
 	<key>FontFamily</key>
-	<string>HelveticaNeue-Light</string>
+	<string>HelveticaNeue-Thin</string>
 	<key>FontSize</key>
-	<real>14</real>
+	<real>18</real>
 	<key>GeekletFrame</key>
-	<string>{{124, 184}, {96, 46}}</string>
+	<string>{{18, 356}, {231, 45}}</string>
 	<key>HasShadow</key>
 	<false/>
 	<key>Identifier</key>
 	<string>org.tynsoe.geeklet.shell</string>
 	<key>Name</key>
-	<string>cpu name 1</string>
+	<string>ip</string>
 	<key>RefreshInterval</key>
-	<integer>10000</integer>
+	<integer>300</integer>
 	<key>SetLocale</key>
 	<true/>
 	<key>SuccessImage</key>
@@ -201,7 +201,7 @@
 	ivgZ+Kj5OPnH+lf65/t3/Af8mP0p/br+S/7c/23//w==
 	</data>
 	<key>TextAlignment</key>
-	<integer>2</integer>
+	<integer>0</integer>
 	<key>TextColor</key>
 	<data>
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm

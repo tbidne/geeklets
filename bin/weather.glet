@@ -19,7 +19,7 @@
 	<key>Script</key>
 	<string>&lt;iframe id="forecast_embed" frameborder="0" height="245" width="100%" src="//https://api.darksky.net/forecast/810f7263eb2a6d50260fece64e7dea26/37.8267,-122.4233"&gt;kjhkjh&lt;/iframe&gt;</string>
 	<key>URL</key>
-	<string>file:///Users/Tommy/GitHub/geeklets/weather/weather.html</string>
+	<string>~/GitHub/geeklets/lib/weather.html</string>
 	<key>WebGeekletType</key>
 	<integer>0</integer>
 </dict>
