@@ -27,10 +27,9 @@ def current_used_mem_in_mb
 	
 	# 1 = active, 2 = inactive, 5 = wired down
 	# numbers are pages of 4096 bytes so need to convert to MB
-	used_mem = ((output[1] + output[2] + output[5]) * 4096) / 1000000
-
-	# i thought we had to subtract cached from used but used seems right on its own
-	# cached_mem = (output[11] * 4096) / 1000000
+	used_mem = ((output[1] + output[2] + output[3] + output[5]) * 4096) / 1000000
+	cached_mem = (output[11] * 4096) / 1000000
+	used_mem - cached_mem
 end
 
 # normalizes on a scale from 0-50, prints out a letter that GeekTool interprets as
