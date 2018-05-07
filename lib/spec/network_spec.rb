@@ -1,8 +1,7 @@
 #!/usr/bin/ruby
 
-require 'rspec'
-require './lib/module/network.rb'
 require './lib/spec/spec_helper.rb'
+require './lib/module/network.rb'
 
 describe Network do
 	context "When testing Network" do

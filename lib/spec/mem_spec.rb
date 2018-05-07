@@ -1,8 +1,7 @@
 #!/usr/bin/ruby
 
-require 'rspec'
-require './lib/module/mem.rb'
 require './lib/spec/spec_helper.rb'
+require './lib/module/mem.rb'
 
 describe Mem do
 	context "When testing Mem" do
