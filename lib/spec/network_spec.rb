@@ -2,6 +2,7 @@
 
 require 'rspec'
 require './lib/module/network.rb'
+require './lib/spec/spec_helper.rb'
 
 describe Network do
 	context "When testing Network" do
