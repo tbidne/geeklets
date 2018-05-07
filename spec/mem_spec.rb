@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
-require './lib/spec/spec_helper.rb'
-require './lib/module/mem.rb'
+require 'spec_helper.rb'
+require_relative '../lib/module/mem.rb'
 
 describe Mem do
 	context "When testing Mem" do

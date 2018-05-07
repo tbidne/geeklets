@@ -5,6 +5,12 @@
 #---------------------#
 
 module Network
+
+	byte_suffix_map = {
+		"K" => "M",
+		"M" => "G"
+	}
+
 	def self.ssid
 		airport = "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I"
 		grep = "grep -i ssid | grep -iv BSSID"
@@ -44,20 +50,25 @@ module Network
 		"Local IP:  #{local}Global IP: #{global}"
 	end
 
+	def self.format_bytes(bytes, suffix)
+		bytes >= 1000 ? "#{bytes / 1000} #{byte_suffix_map[suffix]}B" : "#{bytes} #{suffix}B"
+	end
+
+	private_class_method :format_bytes
+
 	def self.total
 		top = "top -l5"
 		grep = "grep \"Networks\""
 		tail = "tail -1"
 
-		# todo: fix K/M bug here
 		data = `#{top} | #{grep} | #{tail}`
-		args = data.scan(/^Networks: packets: [0-9]*\/([0-9]*)[KM] in, [0-9]*\/([0-9]*)[KM] out.$/)
+		args = data.scan(/^Networks: packets: [0-9]*\/([0-9]*)([KM]) in, [0-9]*\/([0-9]*)([KM]) out.$/)
 
 		down = args[0][0].to_f
-		up = args[0][1].to_f
+		up = args[0][2].to_f
 
-		down_str = down < 1000 ? "#{down} MB" : "#{down / 1000} GB"
-		up_str = up < 1000 ? "#{up} MB" : "#{up / 1000} GB"
+		down_str = format_bytes(down, args[0][1])
+		up_str = format_bytes(up, args[0][3])
 
 		"Downloaded: #{down_str}\nUploaded:     #{up_str}"
 	end
