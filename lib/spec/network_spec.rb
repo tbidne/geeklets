@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 require 'rspec'
-require '~/GitHub/geeklets/lib/module/network.rb'
+require './lib/module/network.rb'
 
 describe Network do
 	context "When testing Network" do

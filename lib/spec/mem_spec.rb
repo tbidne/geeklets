@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 require 'rspec'
-require '~/GitHub/geeklets/lib/module/mem.rb'
+require './lib/module/mem.rb'
 
 describe Mem do
 	context "When testing Mem" do
