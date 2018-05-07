@@ -4,3 +4,7 @@ os:
   - osx
 rvm:
   - 2.3.3
+after_success:
+  - bash <(curl -s https://codecov.io/bash -t $CODECOV_TOKEN)
+after_failure:
+  - bash <(curl -s https://codecov.io/bash -t $CODECOV_TOKEN)
