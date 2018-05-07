@@ -4,3 +4,5 @@ os:
   - osx
 rvm:
   - 2.3.3
+install:
+  - gem install coveralls
