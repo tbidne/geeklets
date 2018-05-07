@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 # absolute path required since GeekTool runs from a different directory
-require '~/GitHub/geeklets/lib/module/network'
+require '~/GitHub/geeklets/lib/modules/network'
 
 if ARGV.size == 1
 	case ARGV[0]

@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
 
+require_relative '../services/network_service.rb'
+
 #---------------------#
 #      Functions      #
 #---------------------#
@@ -12,20 +14,14 @@ module Network
 	}
 
 	def self.ssid
-		airport = "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I"
-		grep = "grep -i ssid | grep -iv BSSID"
-		awk = "awk \'{print $2, $3, $4, $5, $6}\'"
-
-		output = `#{airport} | #{grep} | #{awk}`
+		output = NetworkService::ssid
 		"SSID: #{output}".strip
 	end
 
 	def self.speed
-		netstat = "netstat -bI \'en0\'"
-		awk = "awk \"/en0/\"\'{print $7\" \"$10; exit}\'"
-		sample_a = `#{netstat} | #{awk}`.split(" ").map!(&:to_i)
+		sample_a = NetworkService::speed.split(" ").map!(&:to_i)
 		sleep 1
-		sample_b = `#{netstat} | #{awk}`.split(" ").map!(&:to_i)
+		sample_b = NetworkService::speed.split(" ").map!(&:to_i)
 
 		down = (sample_b[0] - sample_a[0])
 		up = (sample_b[1] - sample_a[1])
@@ -37,15 +33,8 @@ module Network
 	end
 
 	def self.ip
-		# local
-		ifconfig = "ifconfig en0"
-		grep = "grep inet | grep -v inet6"
-		awk = "awk '{print $2}'"
-		local = `#{ifconfig} | #{grep} | #{awk}`
-
-		# global
-		curl = "curl --silent http://ipecho.net/plain"
-		global = `#{curl}`
+		local = NetworkService::ip_local
+		global = NetworkService::ip_global
 
 		"Local IP:  #{local}Global IP: #{global}"
 	end
@@ -57,11 +46,7 @@ module Network
 	private_class_method :format_bytes
 
 	def self.total
-		top = "top -l5"
-		grep = "grep \"Networks\""
-		tail = "tail -1"
-
-		data = `#{top} | #{grep} | #{tail}`
+		data = NetworkService::total
 		args = data.scan(/^Networks: packets: [0-9]*\/([0-9]*)([KM]) in, [0-9]*\/([0-9]*)([KM]) out.$/)
 
 		down = args[0][0].to_f
