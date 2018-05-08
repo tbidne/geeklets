@@ -1,7 +1,6 @@
 #!/usr/bin/ruby
 
-# absolute path required since GeekTool runs from a different directory
-require '~/GitHub/geeklets/lib/modules/system'
+require_relative '../modules/system'
 
 module SystemDriver
 	def self.drive

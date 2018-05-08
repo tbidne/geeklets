@@ -1,7 +1,6 @@
 #!/usr/bin/ruby
 
-# absolute path required since GeekTool runs from a different directory
-require '~/GitHub/geeklets/lib/modules/network'
+require_relative '../modules/network'
 
 module NetworkDriver
 	def self.drive(method)
