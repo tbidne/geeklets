@@ -12,7 +12,7 @@ module SystemService
 
 	def self.uptime
 		uptime = "uptime"
-		cut = "cut -c 11-11"
+		cut = "cut -c 11-100"
 		awk = "awk \'{split($0, a, \"[ mins]*, [1234567890]+ user\"); sub(\":\", \"h \", a[1]); sub(\" day,  \", \"d \", a[1]); print \"Up for \" a[1] \" mins\" }\'"
 		
 		`#{uptime} | #{cut} | #{awk}`
