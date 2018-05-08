@@ -3,17 +3,21 @@
 # absolute path required since GeekTool runs from a different directory
 require '~/GitHub/geeklets/lib/modules/network'
 
-if ARGV.size == 1
-	case ARGV[0]
-	when "ssid"
-		puts Network::ssid
-	when "speed"
-		puts Network::speed
-	when "ip"
-		puts Network::ip
-	when "total"
-		puts Network::total
+module NetworkDriver
+	def self.drive(method)
+			case method
+			when "ssid"
+				Network::ssid
+			when "speed"
+				Network::speed
+			when "ip"
+				Network::ip
+			when "total"
+				Network::total
+			else
+				"usage: ./network.rb [ssid] [networkSpeed] [ip] [total]"
+			end
 	end
-else
-	puts "usage: ./network.rb [ssid] [networkSpeed] [ip] [total]"
 end
+
+puts NetworkDriver::drive(!ARGV.empty? ? ARGV[0] : '')

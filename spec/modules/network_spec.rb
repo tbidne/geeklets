@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 require 'spec_helper.rb'
-require_relative '../lib/modules/network.rb'
+require_relative '../../lib/modules/network.rb'
 
 describe Network do
 	context "When testing Network" do
