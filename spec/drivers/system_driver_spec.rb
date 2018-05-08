@@ -9,7 +9,7 @@ describe SystemDriver do
 			expect(System).to receive(:current_used_mem_in_mb).and_return(4000)
 			expect(System).to receive(:mb_to_geektool_format).and_return("z")
 
-			result = SystemDriver::drive
+			result = SystemDriver::drive("memory")
 
 			expect(result).to eql "z"
 		end

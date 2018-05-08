@@ -19,4 +19,5 @@ module NetworkDriver
 	end
 end
 
-puts NetworkDriver::drive(!ARGV.empty? ? ARGV[0] : '')
+result = NetworkDriver::drive(ARGV[0])
+if !result.start_with?("usage") then puts result end
