@@ -8,7 +8,7 @@ require_relative '../services/network_service.rb'
 
 module Network
 
-	byte_suffix_map = {
+	@@byte_suffix_map = {
 		"K" => "M",
 		"M" => "G"
 	}
@@ -40,7 +40,7 @@ module Network
 	end
 
 	def self.format_bytes(bytes, suffix)
-		bytes >= 1000 ? "#{bytes / 1000} #{byte_suffix_map[suffix]}B" : "#{bytes} #{suffix}B"
+		bytes >= 1000 ? "#{bytes / 1000} #{@@byte_suffix_map[suffix]}B" : "#{bytes} #{suffix}B"
 	end
 
 	private_class_method :format_bytes

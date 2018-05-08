@@ -7,6 +7,8 @@ module SystemDriver
 		case method
 		when "memory"
 			System::mb_to_geektool_format(System::current_used_mem_in_mb)
+		when "uptime"
+			System::uptime
 		else
 			''
 		end

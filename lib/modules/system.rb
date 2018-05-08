@@ -29,4 +29,8 @@ module System
 		normalized = ((mem * 50 ) / 8000.0).round
 		NUM_TO_CHAR[normalized]
 	end
+
+	def self.uptime
+		SystemService::uptime
+	end
 end
