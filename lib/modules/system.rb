@@ -9,9 +9,6 @@ module System
 	('A'..'Y').each { |c| NUM_TO_CHAR[i] = c ; i += 1 }
 
 	def self.current_used_mem_in_mb
-		# used to use `top -l1 | grep "PhysMem"` for this, but top is misleading
-		# because it includes cached memory. vm_stat is better (and faster)
-
 		output = SystemService::memory_statistics.split("\n").map!{ |x|
 			x.scan(/[0-9]+/)[0].to_i
 		}

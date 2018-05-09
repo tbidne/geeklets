@@ -13,5 +13,11 @@ describe SystemDriver do
 
 			expect(result).to eql "z"
 		end
+
+		it "should call system uptime" do
+			expect(System).to receive(:uptime)
+
+			result = SystemDriver::drive("uptime")
+		end
 	end
 end

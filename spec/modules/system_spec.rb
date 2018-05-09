@@ -31,5 +31,11 @@ describe System do
 			result = System::mb_to_geektool_format(8000)
 			expect(result).to eq "Y"
 		end
+
+		it "should get the uptime" do
+			expect(SystemService).to receive(:uptime)
+
+			result = System::uptime
+		end
 	end
 end

@@ -14,5 +14,15 @@ describe SystemService do
 
 			SystemService::memory_statistics
 		end
+
+		it "should execute bash command for uptime" do
+			uptime = "uptime"
+			cut = "cut -c 11-100"
+			awk = "awk \'{split($0, a, \"[ mins]*, [1234567890]+ user\"); sub(\":\", \"h \", a[1]); sub(\" day,  \", \"d \", a[1]); print \"Up for \" a[1] \" mins\" }\'"
+
+			expect(SystemService).to receive(:`).with("#{uptime} | #{cut} | #{awk}")
+
+			SystemService::uptime
+		end
 	end
 end
