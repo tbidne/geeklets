@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Command</key>
-	<string>~/GitHub/geeklets/lib/driver/network_driver.rb total</string>
+	<string>~/GitHub/geeklets/lib/drivers/network_driver.rb total</string>
 	<key>DropShadow</key>
 	<false/>
 	<key>FailureImage</key>

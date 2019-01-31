@@ -55,8 +55,8 @@ module Network
     data = NetworkService.total
     args = data.scan(%r{
       ^Networks:\spackets:\s
-      [0-9]*\/([0-9]*)([KM])\sin,
-      \s[0-9]*\/([0-9]*)([KM])\sout.$
+      [0-9]*\/([0-9]*)([KMG])\sin,
+      \s[0-9]*\/([0-9]*)([KMG])\sout.$
     }x)
 
     down = args[0][0].to_f
